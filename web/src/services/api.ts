@@ -123,7 +123,7 @@ export default class API {
       headers: {
         'Content-Type': blob.type,
         sentence: encodeURIComponent(sentence),
-        sentence_id: sentenceId,
+        sentence_id: encodeURIComponent(sentenceId),
         challenge: getChallenge(this.user),
       },
       body: blob,

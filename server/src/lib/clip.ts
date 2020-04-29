@@ -122,10 +122,10 @@ export default class Clip {
   saveClip = async (request: Request, response: Response) => {
     const { client_id, headers, params } = request;
 
-    console.log('backend saveClip');
-    console.log(headers);
+    console.log('backend saveClip req params');
+    console.log(request);
     const sentence = decodeURIComponent(headers.sentence as string);
-    const sentence_id = headers.sentence_id;
+    const sentence_id = decodeURIComponent(headers.sentence_id as string);
 
     if (!client_id || !sentence) {
       throw new ClientParameterError();
