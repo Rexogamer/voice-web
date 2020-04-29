@@ -121,6 +121,9 @@ export default class Clip {
    */
   saveClip = async (request: Request, response: Response) => {
     const { client_id, headers, params } = request;
+
+    console.log('backend saveClip');
+    console.log(headers);
     const sentence = decodeURIComponent(headers.sentence as string);
     const sentence_id = headers.sentence_id;
 
@@ -128,6 +131,7 @@ export default class Clip {
       throw new ClientParameterError();
     }
 
+    console.log('backend sentence id: ' + sentence_id);
     // Where is our audio clip going to be located?
     const folder = client_id + '/';
     const filePrefix = sentence_id;

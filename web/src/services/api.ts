@@ -117,6 +117,7 @@ export default class API {
     showFirstStreakToast?: boolean;
     challengeEnded: boolean;
   }> {
+    console.log('web/api sentence ID: ' + sentenceId);
     return this.fetch(this.getClipPath(), {
       method: 'POST',
       headers: {
